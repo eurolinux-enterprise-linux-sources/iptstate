@@ -1,0 +1,63 @@
+IPTState Bugs
+
+KNOWN BUGS
+None*
+
+* There are no known bugs in the iptstate code at the time of this writing.
+However, there are bugs in other pieces of software that may affect your
+iptstate experience:
+
+ - libnetfilter_conntrack 0.0.50 has a bug that prevents iptstate from
+deleting ICMP states. I wrote the following patch which the netfilter folks
+have already applied to their SVN tree:
+  http://www.phildev.net/linux/patches/libnetfilter_conntrack-0.0.50_icmp_id.patch
+You can use it if this affects you.
+
+ - There seems to be a small memory leak somewhere in ncurses. See 
+  http://www.phildev.net/iptstate/memleak.html
+for details.  This won't effect most users much, but you want to be weary of
+leaving iptstate running on very busy firewalls for very long periods of time
+(a day or more). This bug has been reported to ncurses, see above URL.
+
+ABOUT BUGS
+If you find a bug in IPTState you should file a bug at our bugtracker:
+  https://sourceforge.net/tracker/?group_id=52748&atid=467897
+OR mail our -devel list:
+  https://lists.sourceforge.net/lists/listinfo/iptstate-devel
+OR email me at phil AT ipom DOT com.
+
+Sending a bug to your distro or some public forum is not going to let me know.
+I can't fix things I don't know about. So make sure I know!
+
+ABOUT MY RESPONSE
+If your bug is serious - i.e. compilation errors, a major a functionality is
+broken, or a security problem I'll usually give you pretty immediate attention.
+If it's a very minor bug, or a feature request, I'll respond as I have time.
+
+ABOUT PATCHES
+Patches are not necessary, but if you submit one remember: PATCHES SHOULD BE
+ACCOMPANIED BY EXPLINATIONS AND/OR BUG REPORTS! Let me know what you were
+trying to fix/add and how you did it. This will save me a lot of time, and I'll
+like you more.
+
+ABOUT BUG REPORTS
+If you send me a bug report you MUST do the following:
+  - Include "IPTSTATE" in the subject
+  - Include your iptstate version
+  - Include your distribution and distribution version
+  - Include your kernel version
+  - Include your g++ version
+  - Include your make version
+  - Include your glibc version
+  - Include your ncurses version
+  - Include your libnetfilter_conntrack version
+  - Include any relevant output and/or errors
+
+Bug reports should be sent to *ME* (see above). I cannot fix your bugs if you
+don't tell *ME* about them. That's right, send your bug reports to *ME*.
+
+Thanks!
+
+Phil Dibowitz
+phil AT ipom DOT com
+
