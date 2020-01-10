@@ -1,7 +1,7 @@
 Name: iptstate
 Summary: A top-like display of IP Tables state table entries
 Version: 2.2.5
-Release: 2%{?dist}
+Release: 4%{?dist}
 Source: http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
 Patch0: iptstate-2.1-man8.patch
 Group: System Environment/Base
@@ -54,6 +54,12 @@ rm -rf %{buildroot}
 %{_mandir}/man8/iptstate.*
 
 %changelog
+* Fri Jan 24 2014 Daniel Mach <dmach@redhat.com> - 2.2.5-4
+- Mass rebuild 2014-01-24
+
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 2.2.5-3
+- Mass rebuild 2013-12-27
+
 * Thu Feb 14 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 2.2.5-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild
 
